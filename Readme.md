@@ -132,16 +132,4 @@ The project focuses on analyzing different methodologies for anomaly detection i
 
   - **Build errors for numpy/pandas**: Building `numpy` and `pandas` from source on Windows often requires a C/C++ toolchain (MSVC) and CMake. Use conda to avoid this.
 
-  ## What I changed in this repo
-
-  - **models.py**: added an automatic fallback to read CSVs from the local `dataset/` folder when Google Colab is not present. See [models.py](models.py).
-  - **requirements.txt**: pinned a minimal set of packages for the project. See [requirements.txt](requirements.txt).
-  - **This README**: expanded setup and troubleshooting steps. See [Readme.md](Readme.md).
-
-  ## Next steps I can do for you
-
-  - Convert the Jupyter notebook `models.ipynb` into a small runnable script with CLI flags to run only preprocessing or only evaluation.
-  - Add a lightweight test that runs a smoke-check on the dataset load (no ML heavy installs).
-  - Prepare a `environment.yml` for conda so others can reproduce the exact environment.
-
-  If you want me to proceed with any of the above, tell me which one and I'll implement it.
+  
