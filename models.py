@@ -11,16 +11,22 @@ try:
 except Exception:
     DATA_DIR = os.path.join(os.path.dirname(__file__), 'dataset')
 
-import pandas as pd
-import warnings
-from pandas.errors import SettingWithCopyWarning
+import sys
+try:
+    import pandas as pd
+    import numpy as np
+    import warnings
+    from pandas.errors import SettingWithCopyWarning
+except ImportError as e:
+    print("Missing required Python package:", e)
+    print("Recommended: create a conda environment and install binary packages:\n  conda create -n keystroke python=3.11 -y\n  conda activate keystroke\n  conda install -c conda-forge pandas numpy scipy scikit-learn matplotlib seaborn -y")
+    sys.exit(1)
 warnings.filterwarnings("ignore", category=SettingWithCopyWarning)
 
 # ## Dataset preparation and preprocessing
 
 
-import pandas as pd
-import numpy as np
+# `pandas` and `numpy` were already imported above; reuse them here
 
 # Load the datasets
 freetext_data = pd.read_csv(os.path.join(DATA_DIR, 'free-text.csv'), low_memory=False)
